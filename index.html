@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS gyakorlo 9</title>
+</head>
+<body>
+
+    <!-- -------------------------------------- LIKE és DISLIKE (Képváltoztatás) GOMBOK HASZNÁLATÁVAL--------------------->
+    <img id = "myImg1" width = "300" height ="200">
+    <br>
+
+    <button onclick = 'document.getElementById("myImg1").src = "like1.jpg"'>Like</button>
+    <button onclick = 'document.getElementById("myImg1").src = "like2.jpg"'>Dislike</button>
+    <hr>
+    <br>
+    <!-- -------------------------------------- LIKE és DISLIKE (Képváltoztatás) KÉPRE KATTINTVA ------------------------->
+    <img id = "myImg2" onclick = "changeImage()" src = "like1.jpg" width = "300" height = "200">    <!-- az src lesz a kezdő kép"-->
+    <p>Kattints a képre!</p>
+
+    <script>
+        function changeImage(){
+        let kep = document.getElementById("myImg2");
+        if (kep.src.match("like2")){    
+            kep.src = "like1.jpg";
+        }
+        else{
+            kep.src = "like2.jpg";
+        }       
+    }        
+    </script>
+    <hr>
+    <br>
+
+    <!-- -------------------------- A KÉP HÁTTERE MEGVÁLTOZIK (egyik kép, másik szín)------------------------------>
+
+    <iframe id = "like" width = "350" height = "250" ></iframe>
+    <input type="button" onclick = "gomb1()" value = "Felugrik egy like">
+    <p id = "demo1" ></p>
+
+    <!-- ....... -->
+
+    <iframe id = "hatterszin" src = "">valami</iframe>
+    <input type="button" onclick = "gomb2()" value = "Megváltozik a háttérszín">
+
+    <!-- ....... --> 
+
+    <script>  
+    // KÉP
+        function gomb1(){
+            let kep = document.getElementById("like");
+            kep.src= "like1.jpg";
+       }
+
+    // HÁTTÉRSZÍN
+        function gomb2(){
+            let szin = document.getElementById("hatterszin");
+            szin.style.backgroundColor = "lightblue";
+        }
+
+
+    </script>
+    
+</body>
+</html>
+
+<!-- képobjektum : https://www.w3schools.com/js/js_ex_dom.asp -->
